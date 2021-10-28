@@ -36,5 +36,24 @@ The data used for this project was downloaded from Kaggle at this [link](https:/
 
 ## Methodology
 
+Computer vision is the field of machine learning concerned with how computers can understand digital images and videos with the goal of automating tasks that are usually completed by a biological visual system. There are many sub domains within computer vision and the most prominent is recognition, which aims to process images and determine if they contain specific objects or features. Object recognition is further divided into image classification, which only assigns a label to an image and image object detection, which draws a box around a specific object and assigns it a label as well. The foundation of both of these tasks is the Convolutional Neural Network, but object detection requires several additional steps. I've previously given a brief summary on the structures of neural networks and convolutional neural networks in my most recent project, if you're not familiar with them you can reference that project at this [link](https://github.com/joshblumer/dsc-phase-4-project). 
+
+To advance from image classification to object detection you have to add layers to the data processing and modeling that draw bounding boxes around the kind of objects you want to detect. There are two modeling techniques with different approaches to object detection and they are the R-CNN (Region based CNN) family, and the YOLO (You Only Look Once) family. The YOLO model approach takes an image and splits it into a grid, within each grid it takes a number of bounding boxes and the network outputs a class probability and bounding box values for each bounding box. The bounding boxes that have a class probability that is above a specific threshold are selected and used to locate the object in each image. YOLO models are much faster than RCNNs due to being a single end to end network, they can make predictions starting at 45 fps (frames per second), but they usually generate more localization errors and struggle to detect smaller objects. Given the scope of my project being to detect license plates, which can be small in many images, I chose to implement a version of a RCNN. 
+
+The original RCNN model developed by [Ross Girshick et all](https://arxiv.org/pdf/1311.2524.pdf) utilized a selective search method that extracted 2000 regions from an image called regional proposals. Once generated the regional proposals are fed into a CNN that extracts their features and outputs a dense layer consisting of the features that is fed into a Support Vector Machine to classify objects. The original RCNN took a large amount of time to train due to having to classify 2000 region proposals per image which led to the next iterations of the RCNN family, fast, and faster-RCNN. Fast and faster RCNN greatly improved the speed of RCNNs by replacing the initial 2000 region grid with a CNN to generate a convolutional feature map which indentified regions of proposal, used a region of interest pooling layer to compress them, and then a softmax layer to predict the class of the proposed region and perform regression on the bounding box. This reduced image processing time from 49 seconds to 2.3 seconds. The faster RCNN model further improved on the fast model by replacing the selective search algorithm used on the feature map to identify region proposals, with another separate network that again used region of interest pooling, which reduced image processing time from 2.3 seconds to 0.2 seconds. The Mask RCNN model used in my object detection model was built directly on top of a Faster-RCNN framework. 
+
+The Mask RCNN model functions very similarly to a Faster-RCNN model with the exception of adding a third output for each proposed object. In addition to the class label and bounding box offset, the Mask model also outputs a third branch known as an object mask. The mask requires a finer spatial layout of an object which makes it more efficient at image segmentation. Image segmentation is broken down into semantic segmentation, which categorizes similar objects at the pixel level as a single class (think background vs. foreground) and instance segmentation, which further segments each individual object on similar planes. The addition of a mask that generates a pixel by pixel alignment elevates Mask models to a best in class solution for object detection, and an especially good solution for detecting a small object such as a license plate that is on the same plane as another object (the vehicle it's attached to).
+
+## Table of Contents
+
+* [Exploratory Data Analysis](#EDA)
+* [Preprocessing](#Process)
+* [Modeling](#Models)
+* [Model Evaluation](#Eval)
+* [Conclusions](#Conclude)
+* [Resources](#Resource)
+
+<a name="EDA"></a> 
+## Exploratory Data Analysis
 
 
