@@ -24,7 +24,7 @@ The global dash cam market grew from $1.2 billion in 2012 to $4 billion in 2020,
 * Keras 2.2.4
 * MRCNN
 
-The data used for this project was downloaded from Kaggle at this [link](https://www.kaggle.com/andrewmvd/car-plate-detection)
+The data used for this project was downloaded from [Kaggle](https://www.kaggle.com/andrewmvd/car-plate-detection).
 
 ## Objectives
 
