@@ -12,7 +12,13 @@ The global dash cam market grew from $1.2 billion in 2012 to $4 billion in 2020,
 
 ## Technologies
 * The data preparation, organization, and modeling for this project can be found in the jupyter notebook file titled 'Mask_RCNN.ipynb', it is located in this page's repo and was created using Python 3.5.6
+
 * There is a keynote presentation for non-technical audiences available under the file name "CapstonePresentation.pdf"
+
+* The data used for this project was downloaded from [Kaggle](https://www.kaggle.com/andrewmvd/car-plate-detection).
+
+* The MS COCO weights that are loaded into the model during training can be found [here](https://github.com/matterport/Mask_RCNN/releases).
+
 
 ### Necessary libraries to reproduce and run this project are:
 * OS
@@ -23,9 +29,6 @@ The global dash cam market grew from $1.2 billion in 2012 to $4 billion in 2020,
 * Tensorflow 1.5
 * Keras 2.2.4
 * MRCNN
-
-The data used for this project was downloaded from [Kaggle](https://www.kaggle.com/andrewmvd/car-plate-detection).
-The MS COCO weights that are loaded into the model during training can be found [here](https://github.com/matterport/Mask_RCNN/releases).
 
 ## Objectives
 
