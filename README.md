@@ -93,7 +93,7 @@ Object recognition and segmentation tasks use their own evaluation metric known 
         
 * Three examples of training images with corresponding mask information, and their bounding box predictions
         
-1[test](https://raw.githubusercontent.com/joshblumer/dsc-Capstone-Project/master/Photos/test.png)
+![test](https://raw.githubusercontent.com/joshblumer/dsc-Capstone-Project/master/Photos/test.png)
         
 * Three examples of testing images that had no corresponding mask information, and their bounding box predictions
 
