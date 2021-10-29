@@ -74,6 +74,45 @@ pic
 
 The Mask_RCNN library is built on top of Tensorflow and Keras and there are similarities in it's implementation of building a CNN, but there are differences as well. The Mask_RCNN model is built using a model configuration object that lets the user specify the number of classes (objects you want to detect) and the number of steps per epoch. Once the configuration class object is defined you instantiate the newly configured object and define the model using Mask_RCNN library specific arguments. From that point the remainder of the training process follows standard CNN steps. Rather than configuring a model architecture from scratch I followed the Mask_RCNN library author's advice and trained the model using downloaded weights from the MS-COCO project (Microsoft Common Objects in Context). The MS-COCO dataset contains 80 classes so it's important to note that you need to exclude class specific output layers when loading the model weights. I trained the model with the default learning rate of 0.001 and 5 epochs and due to the large batch size of 365 (number of training images), the model execution was very time consuming and required 16 hours to train. The Mask_RCNN mmodel outputs several metrics after each epoch, but the only metrics we're concerned with are model loss, class loss, and bounding box loss. The first epoch reported 1.329 train loss/ 1.249 val loss, 0.033 train mrcnn_class_loss/ 0.039 val mrcnn_class_loss, and 0.285 train mrcnn_bbox_loss/ 0.334 val mrcnn_bbox_loss. By the fifth epoch each of those loss metrics decreased to 0.557 train loss/ 0.971 val loss, 0.027 train mrcnn_class_loss/ 0.023 val mrcnn_class_loss, and 0.114 train mrcnn_bbox_loss/ 0.195 val mrcnn_bbox_loss. I chose to freeze all of the MS-COCO layers except for the heads due to time and processing power constraints, but with more time I would have liked to implement a two-stage process that trained the model on frozen weights for one epoch and then fine tuned the model on all layers with none frozen. The decrease in loss with each epoch indicates that that the model is stable though and would have continued to optimize over more epochs. The following visual shows a summary of the model configuration used. 
 
+<a name="Eval"></a>
+## Model Evaluation
+
+Object recognition and segmentation tasks use their own evaluation metric known as mean absolute precision, (mAP). The task of object recognition is to predict a bounding box around the object you want to detect, so to evaluate how well a model can perform that task you use a metric that calculates how much the predicted bounding box and ground truth bounding box overlap. This is known as intersection over union (IoU) and you calculate it by dividing the area of how much the boxes overlap by the total area of the box. Many classification evaluation metrics use 0.5 as the threshold of a random guess probablitity and 1.0 as the upper limit of classification confidence, and mAP uses those same thresholds as well. The precision in mAP refers to the percentage of bounding boxes that are predicted correctly out of all of the predicted bounding boxes and the mean absolute precision is the mean of all of the precision scores for each value of recall, which is the percentage of correctly predicted bounding boxes out of each object in each image. My transfer learning model using the MSCOCO weights returned a training mAP of 86.50% and testing mAP of 87.50%. I would have liked to return a score over 90%, but given the time and resource constraints, 87.50% is a promising score, and still much higher than 50% which indicates strong and reliable model performance. It is unusual for the test score to be higher than the train score and often indicates that the model wasn't fully trained, but could also be due to variance in the images as the train and test sets were both small.
+
+<a name="Conclude"></a>
+## Conclusions
 
 
 
+<a name="Resource"></a>
+## Resources 
+
+Hit and Run Statistics:
+
+* https://aaafoundation.org/hit-and-run-crashes-prevalence-contributing-factors-and-countermeasures/
+
+* https://www.farrin.com/blog/shocking-facts-about-hit-and-run-crashes/
+
+* https://www.psychreg.org/percentage-hit-and-run-solved/
+
+Dashcam Market Statistics:
+
+* https://www.grandviewresearch.com/industry-analysis/dashboard-camera-market#:~:text=The%20global%20dashboard%20camera%20market%20size%20was%20estimated%20at%20USD,USD%203.61%20billion%20in%202021.&text=The%20global%20dashboard%20camera%20market%20is%20expected%20to%20grow%20at,USD%208.47%20billion%20by%202028 
+
+* https://www.statista.com/statistics/675288/dashboard-camera-market-size-worldwide/ 
+        
+ALPR & OCR:
+
+* https://kintronics.com/how-alpr-works/ 
+
+* https://en.wikipedia.org/wiki/Optical_character_recognition 
+
+* https://www.eff.org/pages/automated-license-plate-readers-alpr 
+
+Mask_RCNN References:
+
+* https://github.com/matterport/Mask_RCNN 
+
+* https://machinelearningmastery.com/how-to-train-an-object-detection-model-with-keras/ 
+
+* https://viso.ai/deep-learning/mask-r-cnn/
