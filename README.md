@@ -60,4 +60,20 @@ The Mask RCNN model functions very similarly to a Faster-RCNN model with the exc
 <a name="EDA"></a> 
 ## Exploratory Data Analysis
 
+The dataset I used for my object detection model contains 433 images of vehicles with license plates and 433 XML files given in the PASCAL VOC format that contains their bounding box information. I split this dataset into 365 training examples and 68 testing examples. This would be considered a very sparse dataset for a neural network model as they tend to perform better with as many images as possible. When working with a small dataset you can implement image augmentation to provide added variance within the dataset to help reduce the amount the model over-fits. 
+
+<a name="Process"></a>
+## Preprocessing 
+
+The first step in preprocessing this dataset was removing the 'Cars' prefix from the image and annotation filenames. The Mask_RCNN library requires that data be read in as a 'utils.Dataset' object which takes your provided directory files and stores them as an indexed object. These indexed objects id's can only be processed as integers so any characters other than numeric have to be removed from the file names. Once the data was prepared to be read in I defined functions to load the image and annotation data, extract the bounding box information from the annotation XML files, generate masks using the bounding box coordinates, and load an image reference path to each image. Image data models usually perform best when the images are normalized and that was performed on these images using the Mask_RCNN libraries 'mold_image()' function by centering the pixel values.
+
+pic
+
+<a name="Models"></a>
+## Modeling 
+
+
+
+
+
 
