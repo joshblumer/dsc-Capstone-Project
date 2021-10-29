@@ -8,27 +8,17 @@ For my Flatiron School Data Science Capstone Project I used an object detection 
 
 ## Business Problem Understanding
 
-        A study performed by the AAA Foundation for Traffic Safety using data compiled by the National Highway Traffic Safety Administration calculated that in 2015 there were an estimated 737,100 hit-and-run crashes that caused 2,049 fatalities and millions of dollars in costs of material loss, loss of productivity, and medical bills
-
-        Hit and runs are estimated to have increased by 60% over the last decade and increase by 6-7% annually
-
-        90% of hit-and-runs are never solved as many at fault drivers immediately flee the scene of the accident, leaving the victim solely responsible for their injuries or property damage
-
-        The number of car thefts and road accidents across the globe increases annually
-
-        Dashboard cameras help to capture accidents and theft incidents, and prevent insurance fraud
-
-        The global dash cam market size grew from 1.2 billion dollars in 2012 to over 4 billion dollars in 2020, and it is projected to grow another 33% by 2025
-
-        Incentive to purchase a dash cam has steadily increased given their assistance in monitoring accidents and crime, as well as more and more insurance companies offering discounts to drivers who equip their vehicle with them
-
-        Dashcams are segmented into basic, advanced, and smart based on their quality and underlying technologies with basic and advanced cams capturing over 90% of sales volume
-
-        Current smart cam features include blind-spot detection, lane departure warning systems, and collision avoidance systems
-
-        There are not yet any statistics available, but there are many articles containing qualitative reporting that indicate current dash cam video quality and playback software are not able to distinguish license plate characters in around half of captured accidents and incidents
-
-        The research I conducted did not return any examples of Artificial Intelligence augmented dash cams capable of detecting and storing license plate information of other vehicles
+* A study performed by the AAA Foundation for Traffic Safety using data compiled by the National Highway Traffic Safety Administration calculated that in 2015 there were an estimated 737,100 hit-and-run crashes that caused 2,049 fatalities and millions of dollars in costs of material loss, loss of productivity, and medical bills
+* Hit and runs are estimated to have increased by 60% over the last decade and increase by 6-7% annually
+* 90% of hit-and-runs are never solved as many at fault drivers immediately flee the scene of the accident, leaving the victim solely responsible for their injuries or property damage
+* The number of car thefts and road accidents across the globe increases annually
+* Dashboard cameras help to capture accidents and theft incidents, and prevent insurance fraud
+* The global dash cam market size grew from 1.2 billion dollars in 2012 to over 4 billion dollars in 2020, and it is projected to grow another 33% by 2025
+*Incentive to purchase a dash cam has steadily increased given their assistance in monitoring accidents and crime, as well as more and more insurance companies offering discounts to drivers who equip their vehicle with them
+*Dashcams are segmented into basic, advanced, and smart based on their quality and underlying technologies with basic and advanced cams capturing over 90% of sales volume
+*Current smart cam features include blind-spot detection, lane departure warning systems, and collision avoidance systems
+*There are not yet any statistics available, but there are many articles containing qualitative reporting that indicate current dash cam video quality and playback software are not able to distinguish license plate characters in around half of captured accidents and incidents
+*The research I conducted did not return any examples of Artificial Intelligence augmented dash cams capable of detecting and storing license plate information of other vehicles
 
 Taking all of this information into account clearly positions an AI license plate detection and storage system to capture implementation and sales in an under represented product section of a vast and growing market sector that can help increase the safety of an individual and their property while decreasing their exposure to loss. A company able to produce software utilizing a robust object detection model is positioned to market and sell their software to dash cam and auto manufactures, as well as give them the opportunity to develop their own product to enter the market with.
 
