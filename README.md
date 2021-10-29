@@ -69,11 +69,11 @@ The first step in preprocessing this dataset was removing the 'Cars' prefix from
 
 ![bbox](https://raw.githubusercontent.com/joshblumer/dsc-Capstone-Project/master/Photos/bbox.png)
         
-        * A dataset image displaying it's mask coordinates generated using the information extracted from it's corresponding annotation file
+* A dataset image displaying it's mask coordinates generated using the information extracted from it's corresponding annotation file
         
 ![mask](https://raw.githubusercontent.com/joshblumer/dsc-Capstone-Project/master/Photos/label.png)
         
-        * An example of an image displaying it's mask, bounding box, and label
+* An example of an image displaying it's mask, bounding box, and label
 
 <a name="Models"></a>
 ## Modeling 
@@ -82,7 +82,7 @@ The Mask_RCNN library is built on top of Tensorflow and Keras and there are simi
 
 ![model](https://raw.githubusercontent.com/joshblumer/dsc-Capstone-Project/master/Photos/modelconfig.png)
         
-        * The model configuration used for training, downloaded from the the Mask_RCNN GitHub library
+* The model configuration used for training, downloaded from the the Mask_RCNN GitHub library
 
 <a name="Eval"></a>
 ## Model Evaluation
@@ -91,11 +91,11 @@ Object recognition and segmentation tasks use their own evaluation metric known 
 
 ![train](https://raw.githubusercontent.com/joshblumer/dsc-Capstone-Project/master/Photos/train.png)
         
-        * Three examples of training images with corresponding mask information, and their bounding box predictions
+* Three examples of training images with corresponding mask information, and their bounding box predictions
         
 1[test](https://raw.githubusercontent.com/joshblumer/dsc-Capstone-Project/master/Photos/test.png)
         
-        * Three examples of testing images that had no corresponding mask information, and their bounding box predictions
+* Three examples of testing images that had no corresponding mask information, and their bounding box predictions
 
 <a name="Conclude"></a>
 ## Conclusions
